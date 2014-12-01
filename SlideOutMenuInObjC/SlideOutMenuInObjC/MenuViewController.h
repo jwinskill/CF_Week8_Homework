@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CenterViewController.h"
 
-@interface MenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MenuViewController : UIViewController <UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *viewControllersArray;

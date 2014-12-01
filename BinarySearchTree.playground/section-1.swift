@@ -28,6 +28,27 @@ class Tree {
             }
         }
     }
+    
+    func removeValue (value: Int) {
+        var parent = Tree(value: 0)
+        if value > self.value {
+            if self.rightChild != nil {
+                parent = self
+                self.rightChild?.removeValue(value)
+            } else {
+                return
+            }
+        } else if value < self.value {
+            if self.leftChild != nil {
+                parent = self
+                self.leftChild?.removeValue(value)
+            } else {
+                return
+            }
+        } else if value == self.value {
+            
+        }
+    }
 }
 
 var searchTree = Tree(value: 100)

@@ -36,16 +36,14 @@
         
         [self addChildViewController:self.menuViewController];
         [self.menuViewController didMoveToParentViewController:self];
+        self.menuViewController.tableView.delegate = self;
     }
 }
 
 - (void)animateMenu:(bool) menuShowing{
     if (self.menuShowing == NO) {
-        float rectWidth = CGRectGetWidth(self.navigationController.view.frame);
-        NSLog(@"%f",rectWidth);
         [self animateCenterPanelXPosition:CGRectGetWidth(self.navigationController.view.frame) - 60 completionHandler:nil];
     } else if (self.menuShowing == YES) {
-        NSLog(@"I am getting logged");
         [self animateCenterPanelXPosition:0 completionHandler:^(BOOL finished) {
         }];
     }
@@ -74,15 +72,35 @@
     }];
 }
 
-- (void)collapseMenu {
-    
-}
-
 - (void)toggleMenu {
     if (self.menuShowing == NO) {
         [self addCustomMenuVC];
     }
     [self animateMenu:self.menuShowing];
+}
+
+#pragma MARK - tableViewDelegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.row) {
+        case 0:
+            self.centerViewController.view.backgroundColor = [UIColor blueColor];
+            break;
+        case 1:
+            self.centerViewController.view.backgroundColor = [UIColor greenColor];
+            break;
+        case 2:
+            self.centerViewController.view.backgroundColor = [UIColor purpleColor];
+            break;
+        case 3:
+            self.centerViewController.view.backgroundColor = [UIColor blackColor];
+            break;
+        case 4:
+            self.centerViewController.view.backgroundColor = [UIColor whiteColor];
+            break;
+        default:
+            break;
+    }
 }
 
 @end

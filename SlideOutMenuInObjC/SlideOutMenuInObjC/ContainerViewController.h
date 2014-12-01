@@ -11,7 +11,7 @@
 #import "CenterViewControllerDelegate.h"
 #import "MenuViewController.h"
 
-@interface ContainerViewController : UIViewController <CenterViewControllerDelegate>
+@interface ContainerViewController : UIViewController <CenterViewControllerDelegate, UITableViewDelegate>
 
 @property bool menuShowing;
 @property (strong, nonatomic) CenterViewController *centerViewController;
