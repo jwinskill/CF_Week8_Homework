@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.menuShowing = NO;
     self.centerViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"CENTER_VC"];
     self.centerViewController.delegate = self;
     
@@ -39,27 +40,38 @@
 }
 
 - (void)animateMenu:(bool) menuShowing{
-    if (!menuShowing) {
-        self.menuShowing = true;
+    if (self.menuShowing == NO) {
         float rectWidth = CGRectGetWidth(self.navigationController.view.frame);
         NSLog(@"%f",rectWidth);
         [self animateCenterPanelXPosition:CGRectGetWidth(self.navigationController.view.frame) - 60 completionHandler:nil];
-    } else {
-        [self animateCenterPanelXPosition:0 completionHandler:^(bool nilValue) {
-            self.menuShowing = false;
-            [self.menuViewController.view removeFromSuperview];
-            self.menuViewController = nil;
+    } else if (self.menuShowing == YES) {
+        NSLog(@"I am getting logged");
+        [self animateCenterPanelXPosition:0 completionHandler:^(BOOL finished) {
         }];
     }
 }
 
-- (void)animateCenterPanelXPosition:(CGFloat)targetPosition completionHandler:(void(^)(bool nilValue))completionHandler {
+- (void)animateCenterPanelXPosition:(CGFloat)targetPosition completionHandler:(void(^)(BOOL finished))completionHandler {
     [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         CGRect newFrame = self.navigationController.view.frame;
         newFrame.origin.x = targetPosition;
-        NSLog(@"%f",targetPosition);
+        NSLog(@"The target position is: %f",targetPosition);
         [self.navigationController.view setFrame:newFrame];
-    } completion:nil];
+    } completion:^(BOOL finished){
+        if (finished) {
+            NSLog(@"Behold, I am working");
+            if (self.menuShowing == YES) {
+                self.menuShowing = NO;
+                [self.menuViewController.view removeFromSuperview];
+                self.menuViewController = nil;
+                return;
+            }
+            if (self.menuShowing == NO) {
+                self.menuShowing = YES;
+                return;
+            }
+        }
+    }];
 }
 
 - (void)collapseMenu {
@@ -67,7 +79,7 @@
 }
 
 - (void)toggleMenu {
-    if (!self.menuShowing) {
+    if (self.menuShowing == NO) {
         [self addCustomMenuVC];
     }
     [self animateMenu:self.menuShowing];

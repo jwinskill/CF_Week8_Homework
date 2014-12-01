@@ -20,6 +20,6 @@
 
 - (void)addCustomMenuVC;
 - (void)animateMenu:(bool) shouldShow;
-- (void)animateCenterPanelXPosition:(CGFloat)targetPosition completionHandler:(void(^)(bool nilValue))completionHandler;
+- (void)animateCenterPanelXPosition:(CGFloat)targetPosition completionHandler:(void(^)(BOOL finished))completionHandler;
 
 @end
