@@ -2,5 +2,8 @@
 <Timeline
    version = "3.0">
    <TimelineItems>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "#CharacterRangeLen=26&amp;CharacterRangeLoc=2147&amp;EndingColumnNumber=27&amp;EndingLineNumber=84&amp;StartingColumnNumber=1&amp;StartingLineNumber=84&amp;Timestamp=439155447.419859">
+      </LoggerValueHistoryTimelineItem>
    </TimelineItems>
 </Timeline>

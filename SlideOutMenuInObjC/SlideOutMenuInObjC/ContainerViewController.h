@@ -21,5 +21,6 @@
 - (void)addCustomMenuVC;
 - (void)animateMenu:(bool) shouldShow;
 - (void)animateCenterPanelXPosition:(CGFloat)targetPosition completionHandler:(void(^)(BOOL finished))completionHandler;
+- (void)setTableViewConstraints:(UITableView *)tableView;
 
 @end

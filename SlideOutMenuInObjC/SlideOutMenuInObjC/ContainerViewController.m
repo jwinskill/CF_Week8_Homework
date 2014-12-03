@@ -31,9 +31,10 @@
 
 - (void)addCustomMenuVC {
     if (!self.menuViewController) {
-        self.menuViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"MENU_VC"];
+    // TODO: - implement manual menuViewController
+        self.menuViewController = [[MenuViewController alloc] init];
+
         [self.view insertSubview:self.menuViewController.view atIndex:0];
-        
         [self addChildViewController:self.menuViewController];
         [self.menuViewController didMoveToParentViewController:self];
         self.menuViewController.tableView.delegate = self;
@@ -102,5 +103,11 @@
             break;
     }
 }
+
+- (void)setTableViewConstraints:(UITableView *)tableView {
+    
+}
+
+
 
 @end

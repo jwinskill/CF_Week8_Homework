@@ -12,6 +12,5 @@
 @protocol CenterViewControllerDelegate <NSObject>
 
 - (void) toggleMenu;
-- (void) collapseMenu;
 
 @end

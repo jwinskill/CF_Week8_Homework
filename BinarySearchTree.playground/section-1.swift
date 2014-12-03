@@ -29,6 +29,26 @@ class Tree {
         }
     }
     
+    func searchValue (value: Int) -> Bool {
+        var currentTree: Tree? = Tree(value: self.value)
+        
+        println("right child: ")
+        
+        while currentTree != nil {
+            if currentTree!.value == value {
+                return true
+            }
+            if value > currentTree!.value {
+                currentTree = currentTree!.rightChild
+                println("why?")
+            } else if value < currentTree!.value {
+                currentTree = currentTree!.leftChild
+            }
+        }
+        return false
+    }
+
+    
     func removeValue (value: Int) {
         var parent = Tree(value: 0)
         if value > self.value {
@@ -60,4 +80,6 @@ searchTree.setValue(30)
 searchTree.setValue(200)
 searchTree.setValue(135)
 searchTree.setValue(400)
+searchTree.setValue(99)
 
+searchTree.searchValue(45)
