@@ -19,7 +19,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"CELL" forIndexPath:indexPath];
+    static NSString *reuseIdentifier = @"CELL";
+    
+    [tableView registerClass:[MenuCell class] forCellReuseIdentifier:reuseIdentifier];
+    
+    MenuCell *cell = [self.tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+    if (cell == nil) {
+        cell = [[MenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CELL"];
+    }
     cell.textLabel.text = [NSString stringWithFormat:@"%@",self.viewControllersArray[indexPath.row]];
     return cell;
 }
@@ -35,10 +42,10 @@
     self.tableView.dataSource = self;
     
     NSDictionary *tableViewDictionary = @{@"tableView" : self.tableView};
-    NSDictionary *metrics = @{@"vSpacing" : @20, @"hSpacing" : @16};
+    NSDictionary *metrics = @{@"vSpacingTop" : @20, @"vSpacingBottom" : @0, @"hSpacing" : @0};
 
     // Add constraints for tableView size
-    NSArray *constraint_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-vSpacing-[tableView]-vSpacing-|"
+    NSArray *constraint_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-vSpacingTop-[tableView]-vSpacingBottom-|"
                                                                     options:0
                                                                     metrics:metrics
                                                                       views:tableViewDictionary];

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CenterViewController.h"
+#import "MenuCell.h"
 
 @interface MenuViewController : UIViewController <UITableViewDataSource>
 

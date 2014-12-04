@@ -15,7 +15,12 @@
 @implementation CenterViewController
 
 -(void)viewDidLoad {
-
+    [super viewDidLoad];
+    
+    CGRect rect = CGRectMake(16, self.view.frame.size.height / 2, self.view.frame.size.width - 32, (self.view.frame.size.height / 2) - 10);
+    Shape *shapeView = [[Shape alloc] initWithFrame:rect];
+    [self.view addSubview:shapeView];
+    
 }
 
 - (IBAction)didPressBurgerButton:(id)sender {

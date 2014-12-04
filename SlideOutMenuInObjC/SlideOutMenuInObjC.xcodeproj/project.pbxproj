@@ -18,6 +18,8 @@
 		038D45031A2411D400868156 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038D45021A2411D400868156 /* ContainerViewController.m */; };
 		038D45081A241C3100868156 /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038D45071A241C3100868156 /* CenterViewController.m */; };
 		038D450B1A24514C00868156 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038D450A1A24514C00868156 /* MenuViewController.m */; };
+		03D71ED61A30189900EAAEC3 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D71ED51A30189900EAAEC3 /* MenuCell.m */; };
+		03D71ED91A31229B00EAAEC3 /* Shape.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D71ED81A31229B00EAAEC3 /* Shape.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,10 @@
 		038D45071A241C3100868156 /* CenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterViewController.m; sourceTree = "<group>"; };
 		038D45091A24514C00868156 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		038D450A1A24514C00868156 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		03D71ED41A30189900EAAEC3 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		03D71ED51A30189900EAAEC3 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
+		03D71ED71A31229B00EAAEC3 /* Shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shape.h; sourceTree = "<group>"; };
+		03D71ED81A31229B00EAAEC3 /* Shape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shape.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +105,12 @@
 				038D44E31A2411B400868156 /* ViewController.m */,
 				038D45011A2411D400868156 /* ContainerViewController.h */,
 				038D45021A2411D400868156 /* ContainerViewController.m */,
+				03D71ED71A31229B00EAAEC3 /* Shape.h */,
+				03D71ED81A31229B00EAAEC3 /* Shape.m */,
 				038D45091A24514C00868156 /* MenuViewController.h */,
 				038D450A1A24514C00868156 /* MenuViewController.m */,
+				03D71ED41A30189900EAAEC3 /* MenuCell.h */,
+				03D71ED51A30189900EAAEC3 /* MenuCell.m */,
 				038D45061A241C3100868156 /* CenterViewController.h */,
 				038D45071A241C3100868156 /* CenterViewController.m */,
 				038D45051A24186600868156 /* CenterViewControllerDelegate.h */,
@@ -241,9 +251,11 @@
 			files = (
 				038D44E11A2411B400868156 /* SlideOutMenuInObjC.xcdatamodeld in Sources */,
 				038D44DE1A2411B400868156 /* AppDelegate.m in Sources */,
+				03D71ED61A30189900EAAEC3 /* MenuCell.m in Sources */,
 				038D44E41A2411B400868156 /* ViewController.m in Sources */,
 				038D44DB1A2411B400868156 /* main.m in Sources */,
 				038D450B1A24514C00868156 /* MenuViewController.m in Sources */,
+				03D71ED91A31229B00EAAEC3 /* Shape.m in Sources */,
 				038D45031A2411D400868156 /* ContainerViewController.m in Sources */,
 				038D45081A241C3100868156 /* CenterViewController.m in Sources */,
 			);
@@ -438,6 +450,7 @@
 				038D44FD1A2411B400868156 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		038D44FE1A2411B400868156 /* Build configuration list for PBXNativeTarget "SlideOutMenuInObjCTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +459,7 @@
 				038D45001A2411B400868156 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
